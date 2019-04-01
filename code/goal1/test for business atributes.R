@@ -14,7 +14,7 @@ wilcox.test(c0,c1,paired = F)
 wilcox.test(c0,c2,paired = F)
 wilcox.test(c1,c2,paired = F)
 (m = c(round(mean(c0),2),round(mean(c1),2),round(mean(c2),2)))
-barplot(c(mean(c0),mean(c1),mean(c2)),names.arg = c('False','None','True'),xlab = 'class',
+x=barplot(c(mean(c0),mean(c1),mean(c2)),names.arg = c('False','None','True'),xlab = 'class',
         ylab = 'average star',main = 'RestaurantsTableService',ylim = c(0,5))
 text(x,c(mean(c0),mean(c1),mean(c2)),labels = m,cex=1.5,pos=1)
 
@@ -166,3 +166,62 @@ x = barplot(c(mean(c0),mean(c1),mean(c2),mean(c3)),names.arg = c('None','free','
             ylab = 'average star',main = 'WiFi',ylim = c(0,5),col = 'light blue')
 text(x,c(mean(c0),mean(c1),mean(c2),mean(c3)),labels = m,cex=1.5,pos=1)
 
+# BusinessAcceptsCreditCards
+c0 = dat$stars[dat$BusinessAcceptsCreditCards == 0]   #False
+c1 = dat$stars[dat$BusinessAcceptsCreditCards == 1]   #None
+c2 = dat$stars[dat$BusinessAcceptsCreditCards == 2]   #True
+data = data.frame(x = c(c0,c1,c2),g = factor(rep(1:3,c(70,1576,2626))))
+kruskal.test(x~g,data = data)    #p-value < 2.2e-16, p < 0.05
+wilcox.test(c0,c1,paired = F)
+wilcox.test(c0,c2,paired = F)
+wilcox.test(c1,c2,paired = F)  #p-value = 0.4354
+(m = c(round(mean(c0),2),round(mean(c1),2),round(mean(c2),2)))
+x=barplot(c(mean(c0),mean(c1),mean(c2)),names.arg = c('False','None','True'),xlab = 'class',
+          ylab = 'average star',main = 'BusinessAcceptsCreditCards',ylim = c(0,5))
+text(x,c(mean(c0),mean(c1),mean(c2)),labels = m,cex=1.5,pos=1)
+
+#HasTV
+c0 = dat$stars[dat$HasTV == 0]   #False
+c1 = dat$stars[dat$HasTV == 1]   #None
+c2 = dat$stars[dat$HasTV == 2]   #True
+data = data.frame(x = c(c0,c1,c2),g = factor(rep(1:3,c(2003,656,1613))))
+kruskal.test(x~g,data = data)    #p-value = 0.2687
+wilcox.test(c0,c1,paired = F)    #p-value = 0.08621
+wilcox.test(c0,c2,paired = F)    #p-value = 0.6831
+wilcox.test(c1,c2,paired = F)    #p-value = 0.2614
+(m = c(round(mean(c0),2),round(mean(c1),2),round(mean(c2),2)))
+x=barplot(c(mean(c0),mean(c1),mean(c2)),names.arg = c('False','None','True'),xlab = 'class',
+          ylab = 'average star',main = 'HasTV',ylim = c(0,5))
+text(x,c(mean(c0),mean(c1),mean(c2)),labels = m,cex=1.5,pos=1)
+
+#RestaurantsReservations
+c0 = dat$stars[dat$RestaurantsReservations == 0]   #False
+c1 = dat$stars[dat$RestaurantsReservations == 1]   #None
+c2 = dat$stars[dat$RestaurantsReservations == 2]   #True
+data = data.frame(x = c(c0,c1,c2),g = factor(rep(1:3,c(2612,408,1252))))
+kruskal.test(x~g,data = data)    #p-value < 0.05
+wilcox.test(c0,c1,paired = F)    #p-value < 0.05
+wilcox.test(c0,c2,paired = F)    #p-value < 0.05
+wilcox.test(c1,c2,paired = F)    #p-value = 0.09157
+(m = c(round(mean(c0),2),round(mean(c1),2),round(mean(c2),2)))
+x=barplot(c(mean(c0),mean(c1),mean(c2)),names.arg = c('False','None','True'),xlab = 'class',
+          ylab = 'average star',main = 'RestaurantsReservations',ylim = c(0,5))
+text(x,c(mean(c0),mean(c1),mean(c2)),labels = m,cex=1.5,pos=1)
+
+#Alcohol
+c0 = dat$stars[dat$Alcohol == 0]   #None
+c1 = dat$stars[dat$Alcohol == 1]   #free
+c2 = dat$stars[dat$Alcohol == 2]   #no
+c3 = dat$stars[dat$Alcohol == 3]   #paid
+data = data.frame(x = c(c0,c1,c2,c3),g = factor(rep(1:4,c(808,1943,351,1170))))
+kruskal.test(x~g,data = data)    #p-value, p < 0.05
+wilcox.test(c0,c1,paired = F)    #p-value = 0.1146 > 0.05
+wilcox.test(c0,c2,paired = F)    
+wilcox.test(c0,c3,paired = F)    #p-value = 0.6373 > 0,05
+wilcox.test(c1,c2,paired = F) 
+wilcox.test(c1,c3,paired = F)
+wilcox.test(c2,c3,paired = F)    #p-value = 0.1129 > 0.05
+(m = c(round(mean(c0),2),round(mean(c1),2),round(mean(c2),2),round(mean(c3),2)))
+x = barplot(c(mean(c0),mean(c1),mean(c2),mean(c3)),names.arg = c('None','free','no','paid'),xlab = 'class',
+            ylab = 'average star',main = 'Alcohol',ylim = c(0,5),col = 'light blue')
+text(x,c(mean(c0),mean(c1),mean(c2),mean(c3)),labels = m,cex=1.5,pos=1)
