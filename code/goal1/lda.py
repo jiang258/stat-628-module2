@@ -5,10 +5,12 @@ Created on Thu Mar 14 16:23:55 2019
 
 @author: tyt
 """
-
+import pandas as pd
 import gensim
 from gensim import corpora, models
-import numpy as np
+import matplotlib.pyplot as plt
+import pyLDAvis
+import pyLDAvis.gensim
 
 dat1 = pd.read_csv('brunch_process.csv')
 dat1=dat1[["stars","text"]]
