@@ -1,0 +1,6 @@
+1. The link contains the raw data is:
+https://uwmadison.app.box.com/s/4m3h9faj3oe677tjkhoaqhbrb9f8i7qm
+
+2. The link contains the cleaned data is:
+https://drive.google.com/open?id=1dlmXuez-3R2KQQJTjaHbtm0Ndf-Wyz1M
+(attribute.csv is for business_attribute analysis, brunch_process.csv is for review analysis and cleaned_train.csv, cleaned_test.csv are for prediction model.)
