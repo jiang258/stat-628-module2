@@ -63,16 +63,30 @@ star2=c(18794.0274,25602.97)
 star3=c(16856.2699,47761.73)
 star4=c(14360.2652,117720.73)
 star5=c(12782.2937,202051.71)
-(fifththtable=data.frame(star1,star2,star3,star4,star5,row.names = c("wait long time","not wait long")))
+(fifthtable=data.frame(star1,star2,star3,star4,star5,row.names = c("wait long time","not wait long")))
 
 
 open_at_night_alcohol=c(707.8647, 821.4149, 1499.0914, 4243.4561, 8652.448)
 not_open_at_night = total_count-open_at_night_alcohol
 chisq.test(open_at_night_alcohol, p=not_open_at_night, rescale.p = TRUE)
+star1=c(707.8647,49047.14)
+star2=c(821.4149,43575.59)
+star3=c(1499.0914,63118.91)
+star4=c(4243.4561,127837.54)
+star5=c(8652.448,206181.55)
+(sixthtable=data.frame(star1,star2,star3,star4,star5,row.names = c("open at night&alcohol","not open at night&alcohol")))
+
 
 buffet_affordable_price=c(2597.2784, 2916.1684, 4632.6847, 6838.5166, 7960.2587)
 not_affordable = total_count - buffet_affordable_price
 chisq.test(buffet_affordable_price, p=not_affordable, rescale.p = TRUE)
+star1=c(2597.2784,47157.72)
+star2=c(2916.1684,41480.83)
+star3=c(4632.6847,59985.32)
+star4=c(6838.5166,125242.48)
+star5=c(7960.2587,206873.74)
+(seventhtable=data.frame(star1,star2,star3,star4,star5,row.names = c("buffet&affordable price","not buffet&affordable price")))
+
 
 main_courses=c(3416.6152, 5849.6538, 10787.5383, 20898.4015, 22782.1599)
 not_main_courses = total_count - main_courses
