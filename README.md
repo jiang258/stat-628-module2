@@ -5,5 +5,7 @@ For goal 1, providing data-driven, actionable suggestions to Yelp business owner
 
 For goal 2, a logistic regression model based on tfidf scores is used to predict the stars.
 
+##data 
 data folder contains a data url.txt, which contains one link to raw data and one link to cleaned data.
+##code
 code folder contains our analysis on goal1 and our prediction model.
