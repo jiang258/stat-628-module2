@@ -14,7 +14,7 @@ code folder contains two folders. goal1 folder contains code for cleaning brunch
 ## plots
 plots folder contains all the plots we produced in code file, summary and presentation slides.
 
-## executive summary
+## summary
 summary folder contains our summary file that presents all our findings and analysis.
 
 ## slides
