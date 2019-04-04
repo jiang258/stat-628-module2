@@ -3,6 +3,8 @@ library(data.table)
 library(vcd)
 library(Ridit)
 
+#### chi-square test for topic scores ####
+
 x <- c(89,37,30,28,2)
 p <- c(40,20,20,15,5)
 chisq.test(x, p = p, rescale.p = TRUE)
@@ -91,6 +93,13 @@ star5=c(7960.2587,206873.74)
 main_courses=c(3416.6152, 5849.6538, 10787.5383, 20898.4015, 22782.1599)
 not_main_courses = total_count - main_courses
 chisq.test(main_courses, p=not_main_courses, rescale.p = TRUE)
+star1=c(3416.6152,46338.38)
+star2=c(5849.6538,38547.35)
+star3=c(10787.5383,53830.46)
+star4=c(20898.4015,111182.60)
+star5=c(22782.1599,192051.84)
+(eighthtable=data.frame(star1,star2,star3,star4,star5,row.names = c("main_courses","not main_courses")))
+
 
 coffee_tea_donut_pastry=c(1230.9865, 1440.4776, 3193.8427, 9736.2134, 18129.7841)
 not_coffee_tea = total_count - coffee_tea_donut_pastry
@@ -113,6 +122,7 @@ not_bagel = total_count - bagel_cream_cheese
 chisq.test(bagel_cream_cheese, p=not_bagel, rescale.p = TRUE)
 
 
+#### correlation test for topic scores ####
 atmosphere=atmosphere_alcohol/total_count
 coffeetea=coffee_tea_donut_pastry/total_count
 cor.test(atmosphere,coffeetea,method="spearman")
